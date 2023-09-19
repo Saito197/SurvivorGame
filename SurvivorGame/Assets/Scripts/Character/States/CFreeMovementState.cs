@@ -5,7 +5,9 @@ namespace SaitoGames.SmasherGame.Character
 {
     public class CFreeMovementState : State
     {
-        public CFreeMovementState(StateMachine stateMachine) : base(stateMachine)
+        private Rigidbody _rb;
+
+        public CFreeMovementState(StateMachine stateMachine, Rigidbody rb) : base(stateMachine)
         {
         }
 

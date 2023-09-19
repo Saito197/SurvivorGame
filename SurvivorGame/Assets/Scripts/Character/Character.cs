@@ -9,6 +9,7 @@ namespace SaitoGames.SmasherGame.Character
     public class Character : StateMachine, IDamagable, IControlable
     {
         [SerializeField] private Transform MeshContainer;
+        [SerializeField] private Rigidbody _rigidBody;
 
         public void ActionCommand(CharacterAction action)
         {
@@ -25,7 +26,7 @@ namespace SaitoGames.SmasherGame.Character
         private void Awake()
         {
             // Define states to be used
-            var initialState = new CFreeMovementState(this);
+            var initialState = new CFreeMovementState(this, _rigidBody);
             var states = new List<State>
             {
                 initialState,
