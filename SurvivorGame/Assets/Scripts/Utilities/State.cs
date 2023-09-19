@@ -3,15 +3,6 @@ using UnityEngine;
 
 namespace SaitoGames.Utilities
 {
-    public enum CharacterAction
-    {
-        // Define a list of input action/commands 
-        Dodge, 
-        Attack,
-        Special1,
-        Special2
-    }
-
     public delegate void StateChangeEventHandler(Type newState);
 
     public abstract class State 
@@ -35,7 +26,5 @@ namespace SaitoGames.Utilities
         public virtual void OnStateExit() { }
         public virtual void StateUpdate() { }
         public virtual void StateFixedUpdate() { }
-        public virtual void ActionCommand(CharacterAction action) { }
-        public virtual void DirectionCommand(Vector2 direction) { }
     }
 }
