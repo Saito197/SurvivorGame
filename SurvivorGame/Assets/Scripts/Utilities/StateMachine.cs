@@ -28,10 +28,14 @@ namespace SaitoGames.Utilities
 
         protected void Update()
         {
-            if (_currentState == null)
-                return;
-
+            if (_currentState == null) return;
             _currentState.StateUpdate();
+        }
+
+        protected void FixedUpdate()
+        {
+            if (_currentState == null) return;
+            _currentState.StateFixedUpdate();
         }
 
         protected void CheckForStateRequest(Type newState)
