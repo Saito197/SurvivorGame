@@ -16,6 +16,7 @@ namespace SaitoGames.SmasherGame.Character
 
         protected void CheckForStateRequest()
         {
+/*
             // Function to check if the current State is requesting a state change. 
             var stateRequest = _currentState?.StateRequest;
             if (stateRequest == null) return;
@@ -29,6 +30,7 @@ namespace SaitoGames.SmasherGame.Character
                     return;
                 }
             }
+        */
         }
     }
 }

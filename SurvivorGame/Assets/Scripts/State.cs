@@ -3,9 +3,12 @@ using UnityEngine;
 
 namespace SaitoGames.SmasherGame.Character
 {
+    public delegate void StateChangeEventHandler(State newState);
+
     public abstract class State 
     {
-        public Type StateRequest { get; set; } = null;
+        public event StateChangeEventHandler StateChange;
+
         private StateMachine _stateMachine;
 
         public State(StateMachine stateMachine)
