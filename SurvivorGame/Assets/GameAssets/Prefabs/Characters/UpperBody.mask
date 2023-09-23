@@ -1,0 +1,241 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UpperBody
+  m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature_002
+    m_Weight: 1
+  - m_Path: Armature_002/Hips
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressL1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressL1/DressL1_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressL2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressL2/DressL2_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressL3
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressL3/DressL3_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressL4
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressL4/DressL4_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressR1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressR1/DressR1_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressR2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressR2/DressR2_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressR3
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressR3/DressR3_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressR4
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/DressR4/DressR4_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Left_leg
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Left_leg/Left_knee
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Left_leg/Left_knee/Left_ankle
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Left_leg/Left_knee/Left_ankle/Left_toe
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Left_leg/Left_knee/Left_ankle/Left_toe/Left_toe_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Right_leg
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Right_leg/Right_knee
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Right_leg/Right_knee/Right_ankle
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Right_leg/Right_knee/Right_ankle/Right_toe
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Right_leg/Right_knee/Right_ankle/Right_toe/Right_toe_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/IndexL1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/IndexL1/IndexL2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/IndexL1/IndexL2/IndexL3
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/IndexL1/IndexL2/IndexL3/IndexL3_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/MiddleL1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/MiddleL1/MiddleL2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/MiddleL1/MiddleL2/MiddleL3
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/MiddleL1/MiddleL2/MiddleL3/MiddleL3_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/RingL1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/RingL1/RingL2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/RingL1/RingL2/RingL3
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/RingL1/RingL2/RingL3/RingL3_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/SmallL1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/SmallL1/SmallL2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/SmallL1/SmallL2/SmallL3
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/SmallL1/SmallL2/SmallL3/SmallL3_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/ThumbL1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/ThumbL1/ThumbL2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/ThumbL1/ThumbL2/ThumbL3
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Left_shoulder/Left_arm/Left_elbow/Left_wrist/ThumbL1/ThumbL2/ThumbL3/ThumbL3_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/Crown
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/Crown/HeadClothL1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/Crown/HeadClothL1/HeadClothL2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/Crown/HeadClothL1/HeadClothL2/HeadClothL2_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/Eye_L
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/Eye_L/Eye_L_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/Eye_R
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/Eye_R/Eye_R_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairBack1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairBack1/HairBack1_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairFront1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairFront1/HairFront2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairFront1/HairFront2/HairFront2_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairFrontL1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairFrontL1/HairFrontL2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairFrontL1/HairFrontL2/HairFrontL2_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairFrontR1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairFrontR1/HairFrontR2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairFrontR1/HairFrontR2/HairFrontR2_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairL1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairL1/HairL2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairL1/HairL2/HairL2_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairR1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairR1/HairR2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairR1/HairR2/HairR2_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairTop1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairTop1/HairTop2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/HairTop1/HairTop2/HairTop2_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/LeftEye
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/LeftEye/LeftEye_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/RightEye
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Neck/Head/RightEye/RightEye_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/IndexR1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/IndexR1/IndexR2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/IndexR1/IndexR2/IndexR3
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/IndexR1/IndexR2/IndexR3/IndexR3_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/MiddleR1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/MiddleR1/MiddleR2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/MiddleR1/MiddleR2/MiddleR3
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/MiddleR1/MiddleR2/MiddleR3/MiddleR3_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/RingR1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/RingR1/RingR2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/RingR1/RingR2/RingR3
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/RingR1/RingR2/RingR3/RingR3_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/SmallR1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/SmallR1/SmallR2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/SmallR1/SmallR2/SmallR3
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/SmallR1/SmallR2/SmallR3/SmallR3_end
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/ThumbR1
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/ThumbR1/ThumbR2
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/ThumbR1/ThumbR2/ThumbR3
+    m_Weight: 1
+  - m_Path: Armature_002/Hips/Spine/Chest/Right_shoulder/Right_arm/Right_elbow/Right_wrist/ThumbR1/ThumbR2/ThumbR3/ThumbR3_end
+    m_Weight: 1
+  - m_Path: Rosemi__1_
+    m_Weight: 1
+  - m_Path: RosemiOutline
+    m_Weight: 1
