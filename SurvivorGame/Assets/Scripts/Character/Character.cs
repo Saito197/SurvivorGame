@@ -8,19 +8,32 @@ namespace SaitoGames.SmasherGame.Character
 {
     public class Character : StateMachine, IDamagable, IControlable
     {
-        public Vector2 Direction { get; private set; }
-
-        [SerializeField] private Transform MeshContainer;
+        [SerializeField] private CharacterInfo _character;
+        [SerializeField] private Transform _meshContainer;
         [SerializeField] private Rigidbody _rigidBody;
         [SerializeField] private MovementParameters _movementParameters;
 
         public void ActionCommand(CharacterAction action)
         {
+            switch (action)
+            {
+                case CharacterAction.Dodge:
+                    break;
+                case CharacterAction.Attack:
+                    break;
+                case CharacterAction.Special1:
+                    break;
+                case CharacterAction.Special2:
+                    break;
+                default:
+                    break;
+            }
+
         }
 
         public void DirectionCommand(Vector2 direction)
         {
-            Direction = direction;
+            _movementParameters.Direction = direction;
         }
 
         public void TakeDamage()
@@ -29,8 +42,11 @@ namespace SaitoGames.SmasherGame.Character
 
         private void Awake()
         {
+            var character = Instantiate(_character.CharacterPrefab, _meshContainer);
+            var anim = character.GetComponent<Animator>();
+
             // Define states to be used
-            var initialState = new CFreeMovementState(this, _rigidBody, _movementParameters);
+            var initialState = new CStandardControlState(this, _rigidBody, anim, _movementParameters);
             var states = new List<State>
             {
                 initialState,

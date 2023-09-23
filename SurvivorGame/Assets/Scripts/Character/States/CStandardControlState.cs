@@ -13,25 +13,41 @@ namespace SaitoGames.SmasherGame.Character
         public float RotationSpeed;
     }
 
-    public class CFreeMovementState : State
+    [Serializable]
+    public class ActionParameters
+    {
+
+    }
+
+    public class CStandardControlState : State
     {
         private readonly Rigidbody _rb;
+        private readonly Animator _animator;
         private readonly MovementParameters _moveParams;
+        private readonly ActionParameters _actionParams;
 
-        public CFreeMovementState(
+        private readonly int MovementHash = Animator.StringToHash("Movement");
+        private readonly int AttackHash = Animator.StringToHash("Attack");
+
+        public CStandardControlState(
             StateMachine stateMachine,
             Rigidbody rb,
-            MovementParameters moveParams
+            Animator animator,
+            MovementParameters moveParams,
+            ActionParameters actionParams
         ) : base(stateMachine)
         {
             _rb = rb;
+            _animator = animator;
             _moveParams = moveParams;
+            _actionParams = actionParams;
         }
 
         public override void StateFixedUpdate()
         {
-            //_rb.velocity = Vector3.zero.With(y: _rb.velocity.y);
             var dir = _moveParams.Direction;
+            _animator.SetFloat(MovementHash, dir.magnitude);
+
             if (dir == Vector2.zero)
                 return;
 
@@ -52,5 +68,13 @@ namespace SaitoGames.SmasherGame.Character
             _rb.Move(newPos, newRot);
 
         }
+
+        public override void OnStateExit()
+        {
+            // Resets the animator when exiting the state
+            _animator.SetFloat(MovementHash, 0f);
+        }
+
+        
     }
 }
