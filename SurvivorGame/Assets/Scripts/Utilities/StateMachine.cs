@@ -14,9 +14,8 @@ namespace SaitoGames.Utilities
         {
             // Handles when the current State requests a state change. 
             var targetState = _states.FirstOrDefault(s => s is T);
-            if (targetState != null)
+            if (targetState == null)
                 return;
-
 
             _currentState.OnStateExit();
             _currentState = targetState;
