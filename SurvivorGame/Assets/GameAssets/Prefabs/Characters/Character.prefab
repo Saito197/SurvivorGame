@@ -112,10 +112,10 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &8055874689948803896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +131,10 @@ MonoBehaviour:
   _character: {fileID: 11400000, guid: 56c52e1cfffcbdd42994b9404b3d7698, type: 2}
   _meshContainer: {fileID: 1118274488308475603}
   _rigidBody: {fileID: 2348695520638013918}
-  _movementParameters:
-    Direction: {x: 0, y: 0}
-    MoveSpeed: 7
-    RotationSpeed: 8
+  _characterParams:
+    MoveDirection: {x: 0, y: 0}
+    LookDirection: {x: 0, y: 0}
+    MoveSpeed: 5
+    RotationSpeed: 12
+    CurrentAction: 0
+  _weapons: []

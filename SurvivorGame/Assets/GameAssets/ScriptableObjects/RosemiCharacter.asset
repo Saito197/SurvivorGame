@@ -9,8 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: PlayerCharacter
+  m_Script: {fileID: 11500000, guid: cfee277041fde724eb07c11578aa6626, type: 3}
+  m_Name: RosemiCharacter
   m_EditorClassIdentifier: Assembly-CSharp:SaitoGames.SmasherGame.Character:CharacterInfo
   CharacterPrefab: {fileID: 5830344807652834322, guid: 80aa2919e1d76a04a8891aae22721bcc,
     type: 3}
+  DefaultWeapon: {fileID: 11400000, guid: 47aee1a714bca7d44817b0d0d80e221b, type: 2}
+  DefaultParameters:
+    MoveDirection: {x: 0, y: 0}
+    LookDirection: {x: 0, y: 0}
+    MoveSpeed: 5
+    RotationSpeed: 10
+    Health: 100
+    MaxHealth: 100
+    Defense: 10
+    CritRate: 5
+    CurrentAction: 0

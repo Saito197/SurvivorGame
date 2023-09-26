@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SaitoGames.SmasherGame.Character
+namespace SaitoGames.SurvivorGame.Character
 {
     public abstract class Controller : MonoBehaviour
     {

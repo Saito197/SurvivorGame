@@ -2,20 +2,28 @@
 using System;
 using UnityEngine;
 
-namespace SaitoGames.SmasherGame.Character
+namespace SaitoGames.SurvivorGame.Character
 {
     public enum CharacterAction
     {
-        // Define a list of input action/commands 
+        // Define a list of input action/commands that executes once when the button is pressed
+        None,
         Dodge,
-        Attack,
         Special1,
         Special2
     }
 
+    public enum ControllerValue
+    {
+        None,
+        Strafe
+    }
+
     public interface IControlable
     {
-        void DirectionCommand(Vector2 direction);
+        void MovementCommand(Vector2 direction);
+        void LookDirectionCommand(Vector2 direction);
         void ActionCommand(CharacterAction action);
+        void ValueUpdateCommand(ControllerValue value, bool isPressed);
     }
 }

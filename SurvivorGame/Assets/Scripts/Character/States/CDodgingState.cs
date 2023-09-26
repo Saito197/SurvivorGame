@@ -1,7 +1,7 @@
 ﻿using SaitoGames.Utilities;
 using UnityEngine;
 
-namespace SaitoGames.SmasherGame.Character
+namespace SaitoGames.SurvivorGame.Character
 {
     public class CDodgingState : State
     {

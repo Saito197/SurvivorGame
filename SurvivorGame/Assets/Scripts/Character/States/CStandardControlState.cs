@@ -1,72 +1,49 @@
 ﻿using SaitoGames.Utilities;
-using System;
+using TMPro.EditorUtilities;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
-namespace SaitoGames.SmasherGame.Character
+namespace SaitoGames.SurvivorGame.Character
 {
-    [Serializable]
-    public class MovementParameters
-    {
-        public Vector2 Direction;
-        public float MoveSpeed;
-        public float RotationSpeed;
-    }
-
-    [Serializable]
-    public class ActionParameters
-    {
-
-    }
 
     public class CStandardControlState : State
     {
         private readonly Rigidbody _rb;
         private readonly Animator _animator;
-        private readonly MovementParameters _moveParams;
-        private readonly ActionParameters _actionParams;
+        private readonly CharacterParameters _characterParams;
 
         private readonly int MovementHash = Animator.StringToHash("Movement");
-        private readonly int AttackHash = Animator.StringToHash("Attack");
 
         public CStandardControlState(
             StateMachine stateMachine,
             Rigidbody rb,
-            Animator animator,
-            MovementParameters moveParams,
-            ActionParameters actionParams
+            Animator anim,
+            CharacterParameters cParams
         ) : base(stateMachine)
         {
             _rb = rb;
-            _animator = animator;
-            _moveParams = moveParams;
-            _actionParams = actionParams;
+            _animator = anim;
+            _characterParams = cParams;
         }
 
         public override void StateFixedUpdate()
         {
-            var dir = _moveParams.Direction;
-            _animator.SetFloat(MovementHash, dir.magnitude);
+            HandleMovement();
+            HandleRotation();
+        }
 
-            if (dir == Vector2.zero)
-                return;
-
-
-            var delta = Time.fixedDeltaTime;
-            var moveSpeed = _moveParams.MoveSpeed * delta;
-            var rotSpeed = _moveParams.RotationSpeed * delta;
-
-            // Get move direction based on X-Z plane
-            var moveDir = dir.RemapToXZPlane(_stateMachine.transform.position.y);
-            moveDir = Camera.main.transform.TransformDirection(moveDir).With(y: 0f);
-            // Find rotation direction
-            var rotDestination = Quaternion.LookRotation(moveDir.With(y: 0f), Vector3.up);
-
-            // Moves character forward and rotates the character based on input
-            var newPos = _rb.position + (moveSpeed * _stateMachine.transform.forward);
-            var newRot = Quaternion.Slerp(_rb.rotation, rotDestination, rotSpeed);
-            _rb.Move(newPos, newRot);
-
+        public override void StateUpdate()
+        {
+            switch (_characterParams.CurrentAction)
+            {
+                case CharacterAction.Dodge:
+                    break;
+                case CharacterAction.Special1:
+                    break;
+                case CharacterAction.Special2:
+                    break;
+            }
+            _characterParams.CurrentAction = CharacterAction.None;
         }
 
         public override void OnStateExit()
@@ -75,6 +52,59 @@ namespace SaitoGames.SmasherGame.Character
             _animator.SetFloat(MovementHash, 0f);
         }
 
-        
+        private void HandleMovement()
+        {
+            _animator.SetFloat(MovementHash, _characterParams.MoveDirection.magnitude);
+            if (_characterParams.MoveDirection == Vector2.zero)
+                return;
+
+            var dir = _characterParams.MoveDirection.RemapToXZPlane(_rb.position.y);
+
+            var delta = Time.fixedDeltaTime;
+            var moveSpeed = _characterParams.MoveSpeed;
+
+            // Moves character
+            var newPos = _rb.position + (delta * moveSpeed * dir);
+            //var newRot = Quaternion.Slerp(_rb.rotation, rotDestination, rotSpeed);
+            _rb.MovePosition(newPos);
+        }
+
+        private void HandleRotation()
+        {
+            var dir = _characterParams.LookDirection;
+            var delta = Time.fixedDeltaTime;
+            var rotSpeed = _characterParams.RotationSpeed * delta;
+
+            if (_characterParams.Strafe || dir != Vector2.zero)
+            {
+                TwinStickRotation(dir, rotSpeed);
+            }
+            else
+            {
+                ForwardRotation(rotSpeed);
+            }
+
+        }
+
+        private void ForwardRotation(float rotSpeed)
+        {
+            var moveDir = _characterParams.MoveDirection;
+            if (moveDir == Vector2.zero)
+                moveDir = _stateMachine.transform.forward.DirectionFromXZPlane();
+
+            TwinStickRotation(moveDir, rotSpeed);
+        }
+
+        private void TwinStickRotation(Vector2 dir, float rotSpeed)
+        {
+            if (dir == Vector2.zero)
+                return;
+
+            // Rotates the character 
+            var rotDir = Camera.main.transform.TransformDirection(dir).With(y: 0f);
+            var targetRot = Quaternion.LookRotation(rotDir.With(y: 0f), Vector3.up);
+            var newRot = Quaternion.Slerp(_rb.rotation, targetRot, rotSpeed);
+            _rb.MoveRotation(newRot);
+        }
     }
 }

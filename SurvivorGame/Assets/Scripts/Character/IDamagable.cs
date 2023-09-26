@@ -1,4 +1,4 @@
-﻿namespace SaitoGames.SmasherGame.Character
+﻿namespace SaitoGames.SurvivorGame.Character
 {
     public interface IDamagable
     {

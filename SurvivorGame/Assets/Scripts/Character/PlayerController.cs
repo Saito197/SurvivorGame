@@ -1,22 +1,30 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
+using static UnityEngine.Rendering.DebugUI;
 
-namespace SaitoGames.SmasherGame.Character
+namespace SaitoGames.SurvivorGame.Character
 {
     public class PlayerController : Controller
     {
-        public void MovementControl(CallbackContext context)
+        public void OnMove(InputValue value)
         {
-            var dir = context.ReadValue<Vector2>();
-            _targetObject.DirectionCommand(dir);
+            var dir = value.Get<Vector2>();
+            _targetObject.MovementCommand(dir);
         }
 
-        public void AttackCommand(CallbackContext context)
+        public void OnLook(InputValue value)
         {
-            _targetObject.ActionCommand(CharacterAction.Attack);
+            var dir = value.Get<Vector2>();
+            _targetObject.LookDirectionCommand(dir);
         }
 
-        public void DodgeCommand(CallbackContext context) 
+        public void OnStrafe(InputValue value)
+        {
+            _targetObject.ValueUpdateCommand(ControllerValue.Strafe, value.isPressed);
+        }
+
+        public void OnDodge() 
         {
             _targetObject.ActionCommand(CharacterAction.Dodge);
         }
