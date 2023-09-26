@@ -134,7 +134,12 @@ MonoBehaviour:
   _characterParams:
     MoveDirection: {x: 0, y: 0}
     LookDirection: {x: 0, y: 0}
-    MoveSpeed: 5
-    RotationSpeed: 12
+    Strafe: 0
+    MoveSpeed: 0
+    RotationSpeed: 0
+    Health: 0
+    MaxHealth: 0
+    Defense: 0
+    CritRate: 0
     CurrentAction: 0
   _weapons: []
