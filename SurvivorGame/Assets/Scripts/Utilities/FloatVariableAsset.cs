@@ -14,7 +14,8 @@ namespace SaitoGames.Utilities
             set
             {
 #if UNITY_EDITOR
-                Debug.Log($"Value of {name} changed from:{_value} to:{value}");
+                if (_logChanges)
+                    Debug.Log($"Value of {name} changed from:{_value} to:{value}");
 #endif
                 _value = value;
                 OnValueChanged?.Invoke();

@@ -1,6 +1,6 @@
 ﻿using SaitoGames.Utilities;
 
-namespace SaitoGames.SmasherGame.GameState
+namespace SaitoGames.SurvivorGame.GameState
 {
     public class GGamePausedState : State
     {

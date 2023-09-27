@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SaitoGames.SmasherGame.GameState
+namespace SaitoGames.SurvivorGame.GameState
 {
     
 
