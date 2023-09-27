@@ -7,7 +7,7 @@ namespace SaitoGames.SurvivorGame.Character
 {
     public class Character : StateMachine, IDamagable, IControlable
     {
-        [SerializeField] private CharacterInfo _character;
+        [SerializeField] private CharacterList _characterList;
         [SerializeField] private Transform _meshContainer;
         [SerializeField] private Rigidbody _rigidBody;
         [SerializeField] private CharacterParameters _characterParams;
@@ -49,14 +49,15 @@ namespace SaitoGames.SurvivorGame.Character
         private void Awake()
         {
             // Load character mesh 
-            var character = Instantiate(_character.CharacterPrefab, _meshContainer);
+            var c = _characterList.ActiveCharacter;
+            var character = Instantiate(c.CharacterPrefab, _meshContainer);
             var anim = character.GetComponent<Animator>();
 
             // Load default weapon
-            _weapons.Add(_character.DefaultWeapon);
+            _weapons.Add(c.DefaultWeapon);
 
             // Load parameters 
-            _characterParams = new CharacterParameters(_character.DefaultParameters);
+            _characterParams = new CharacterParameters(c.DefaultParameters);
 
             // Define states to be used and initializing state machines
             var initialState = new CStandardControlState(

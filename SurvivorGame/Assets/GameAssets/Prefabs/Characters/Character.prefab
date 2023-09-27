@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11018de3e7a80ff43996143bda4d0e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _character: {fileID: 11400000, guid: 56c52e1cfffcbdd42994b9404b3d7698, type: 2}
+  _characterList: {fileID: 11400000, guid: 24bd84c620514ab40a71b4d7c78f18a1, type: 2}
   _meshContainer: {fileID: 1118274488308475603}
   _rigidBody: {fileID: 2348695520638013918}
   _characterParams:

@@ -90,7 +90,7 @@ namespace SaitoGames.SurvivorGame.Character
         {
             var moveDir = _characterParams.MoveDirection;
             if (moveDir == Vector2.zero)
-                moveDir = _stateMachine.transform.forward.DirectionFromXZPlane();
+                return;
 
             TwinStickRotation(moveDir, rotSpeed);
         }

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfee277041fde724eb07c11578aa6626, type: 3}
+  m_Name: Selen Character
+  m_EditorClassIdentifier: Assembly-CSharp:SaitoGames.SmasherGame.Character:CharacterInfo
+  CharacterPrefab: {fileID: 2172161884585825744, guid: b42c8e896c3f727428277f13ac2a7d43,
+    type: 3}
+  DefaultWeapon: {fileID: 11400000, guid: 47aee1a714bca7d44817b0d0d80e221b, type: 2}
+  DefaultParameters:
+    MoveDirection: {x: 0, y: 0}
+    LookDirection: {x: 0, y: 0}
+    Strafe: 0
+    MoveSpeed: 5
+    RotationSpeed: 10
+    Health: 100
+    MaxHealth: 100
+    Defense: 10
+    CritRate: 5
+    CurrentAction: 0

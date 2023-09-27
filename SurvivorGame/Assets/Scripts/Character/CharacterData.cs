@@ -4,7 +4,7 @@ using UnityEngine;
 namespace SaitoGames.SurvivorGame.Character
 {
     [CreateAssetMenu]
-    public class CharacterInfo : ScriptableObject
+    public class CharacterData : ScriptableObject
     {
         public GameObject CharacterPrefab;
         public Weapons DefaultWeapon;
