@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SaitoGames.Utilities;
+using System;
 using UnityEngine;
 
 namespace SaitoGames.SurvivorGame.Character
@@ -10,10 +11,16 @@ namespace SaitoGames.SurvivorGame.Character
         {
             MoveSpeed = parameters.MoveSpeed;
             RotationSpeed = parameters.RotationSpeed;
+            CurrentExp = parameters.CurrentExp;
             Health = parameters.Health;
             MaxHealth = parameters.MaxHealth;
+            MaxHealthDefault = parameters.MaxHealthDefault;
             Defense = parameters.Defense;
             CritRate = parameters.CritRate;
+
+            Health.Value = MaxHealthDefault;
+            MaxHealth.Value = MaxHealthDefault;
+            CurrentExp.Value = 0f;
         }
 
         // Movements
@@ -24,8 +31,10 @@ namespace SaitoGames.SurvivorGame.Character
         // Stats
         public float MoveSpeed;
         public float RotationSpeed;
-        public float Health = 100f;
-        public float MaxHealth = 100f;
+        public FloatVariableAsset CurrentExp;
+        public FloatVariableAsset Health;
+        public FloatVariableAsset MaxHealth;
+        public float MaxHealthDefault;
         public float Defense = 1f;
         public float CritRate = 1f;
 

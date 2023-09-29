@@ -19,10 +19,12 @@ MonoBehaviour:
     MoveDirection: {x: 0, y: 0}
     LookDirection: {x: 0, y: 0}
     Strafe: 0
-    MoveSpeed: 5
+    MoveSpeed: 7
     RotationSpeed: 10
-    Health: 100
-    MaxHealth: 100
-    Defense: 10
-    CritRate: 5
+    CurrentExp: {fileID: 11400000, guid: bd238a16700661d4b9508d5db66ef9d4, type: 2}
+    Health: {fileID: 11400000, guid: c7ab9fcaee09b6c4099bf3f0bc5f941a, type: 2}
+    MaxHealth: {fileID: 11400000, guid: a64d4dd534f115246b309f4d5a2a9460, type: 2}
+    MaxHealthDefault: 50
+    Defense: 1
+    CritRate: 10
     CurrentAction: 0

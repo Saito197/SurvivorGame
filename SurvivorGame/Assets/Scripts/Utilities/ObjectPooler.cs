@@ -7,7 +7,7 @@ using UnityEngine;
 namespace SaitoGames.Utilities
 {
     [Serializable]
-    public class ObjectPooler<T> where T : PooledObject
+    public class ObjectPooler<T> where T : IPooledObject
     {
         public Transform PoolContainer => _objPoolingContainer;
 
@@ -68,13 +68,13 @@ namespace SaitoGames.Utilities
             if (InsufficientObject)
             {
                 if (_objectPrefab == null)
-                    return null;
+                    return default;
 
                 SpawnNewObject();
             }
             var nextObject = _poolObject.Dequeue();
             if (activeImmediately)
-                nextObject?.gameObject.SetActive(true);
+                nextObject?.GameObject.SetActive(true);
 
             return nextObject;
         }
@@ -84,11 +84,11 @@ namespace SaitoGames.Utilities
         {
             _poolObject.Enqueue(objToReturn);
 
-            if (objToReturn.gameObject.activeSelf)
-                objToReturn.gameObject.SetActive(false);
+            if (objToReturn.GameObject.activeSelf)
+                objToReturn.GameObject.SetActive(false);
 
-            objToReturn.transform.position = Vector3.zero;
-            objToReturn.transform.parent = _objPoolingContainer;
+            objToReturn.GameObject.transform.position = Vector3.zero;
+            objToReturn.GameObject.transform.parent = _objPoolingContainer;
         }
 
         public void ReturnObject(GameObject objToReturn)
@@ -101,10 +101,11 @@ namespace SaitoGames.Utilities
 
         private void SpawnNewObject()
         {
-            var newGO = GameObject.Instantiate(_objectPrefab, Vector3.zero, Quaternion.identity, _objPoolingContainer);
-            _poolObject.Enqueue(newGO);
-            newGO.gameObject.SetActive(false);
-            newGO.ReturnEvent += ReturnObject;
+            var newGO = GameObject.Instantiate(_objectPrefab.GameObject, Vector3.zero, Quaternion.identity, _objPoolingContainer);
+            var obj = newGO.GetComponent<T>();
+            _poolObject.Enqueue(obj);
+            obj.GameObject.SetActive(false);
+            obj.ReturnEvent += ReturnObject;
             //newGO.AddComponent<PooledObjectDespawner>().MyPool = this;
         }
 

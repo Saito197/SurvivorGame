@@ -1,3 +1,4 @@
+using SaitoGames.SurvivorGame.Enemies;
 using SaitoGames.SurvivorGame.Weapon;
 using SaitoGames.Utilities;
 using System.Collections.Generic;
@@ -7,6 +8,11 @@ namespace SaitoGames.SurvivorGame.Character
 {
     public class Character : StateMachine, IDamagable, IControlable
     {
+        [Header("Events")]
+        [SerializeField] private GameEvent _upgradeSelectedEvent;
+
+
+        [Header("Parameters")]
         [SerializeField] private CharacterList _characterList;
         [SerializeField] private Transform _meshContainer;
         [SerializeField] private Rigidbody _rigidBody;
@@ -42,8 +48,14 @@ namespace SaitoGames.SurvivorGame.Character
             _characterParams.LookDirection = direction;
         }
 
-        public void TakeDamage()
+        public void TakeDamage(float damage)
         {
+            var dmg = damage - _characterParams.Defense;
+            // Ensure damage is at least 1 so that we don't heal the enemy
+            dmg = (dmg >= 1) ? dmg : 1;
+            dmg = Mathf.Floor(dmg);
+
+            _characterParams.Health.Value -= dmg;
         }
 
         private void Awake()
@@ -70,7 +82,7 @@ namespace SaitoGames.SurvivorGame.Character
             {
                 initialState,
                 new CDamagedState(this),
-                new CDodgingState(this)
+                new CDodgingState(this, anim)
             };
             StateMachineInit(initialState, states);
 
@@ -78,6 +90,30 @@ namespace SaitoGames.SurvivorGame.Character
             // Initialize weapons
             foreach (var w in _weapons)
             {
+                w.InitializeWeapon();
+            }
+
+            // Event register 
+            _upgradeSelectedEvent.Response += HandleWeaponUpgrade;
+        }
+
+        private void OnDestroy()
+        {
+            _upgradeSelectedEvent.Response -= HandleWeaponUpgrade;
+        }
+
+        private void HandleWeaponUpgrade(object[] args)
+        {
+            if (args == null || args.Length == 0) return;
+
+            var w = (Weapons)args[0];
+            if (_weapons.Contains(w))
+            {
+                w.CurrentLevel++;
+            }
+            else
+            {
+                _weapons.Add(w);
                 w.InitializeWeapon();
             }
         }
@@ -89,6 +125,26 @@ namespace SaitoGames.SurvivorGame.Character
                 weapon.WeaponUpdate(transform, Time.deltaTime);
             }
             base.Update();
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            switch (other.tag)
+            {
+                case "Enemy":
+                    var e = other.GetComponent<Enemy>();
+                    var dmg = e.GetAttack();
+                    TakeDamage(dmg);
+                    break;
+                    
+                case "EXP":
+                    _characterParams.CurrentExp.Value += 2f;
+                    other.gameObject.SetActive(false);
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }

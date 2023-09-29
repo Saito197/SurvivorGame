@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6935e12e3bc084cb2448575253690a, type: 3}
+  m_Name: Leaf Shield
+  m_EditorClassIdentifier: 
+  CurrentLevel: 1
+  _bulletPrefab: {fileID: 3121300788499584290, guid: 1fb4e27e2bb32cf4b8a4f7e25f64e52e,
+    type: 3}
+  _maxBulletCount: 10
+  _parameters:
+  - BulletDirection:
+    - {x: 5, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    Speed: 60
+    Damage: 2
+    Cooldown: 0
+    BulletLifeSpan: 0
+    HitDelay: 1.5
+  - BulletDirection:
+    - {x: 5, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    Speed: 90
+    Damage: 5
+    Cooldown: 0
+    BulletLifeSpan: 0
+    HitDelay: 1.5
+  - BulletDirection:
+    - {x: 5, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    Speed: 120
+    Damage: 7
+    Cooldown: 0
+    BulletLifeSpan: 0
+    HitDelay: 1
+  - BulletDirection:
+    - {x: 5, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    Speed: 150
+    Damage: 12
+    Cooldown: 0
+    BulletLifeSpan: 0
+    HitDelay: 0.8
+  - BulletDirection:
+    - {x: 5, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    Speed: 180
+    Damage: 15
+    Cooldown: 0
+    BulletLifeSpan: 0
+    HitDelay: 0.5

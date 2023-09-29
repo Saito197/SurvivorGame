@@ -1,12 +1,19 @@
-﻿using UnityEngine;
+﻿using SaitoGames.SurvivorGame.GameState;
+using SaitoGames.Utilities;
+using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEngine.InputSystem.InputAction;
-using static UnityEngine.Rendering.DebugUI;
 
 namespace SaitoGames.SurvivorGame.Character
 {
     public class PlayerController : Controller
     {
+        [SerializeField] private HealthBar _healthBar;
+        [SerializeField] private Vector3 _cameraOffset;
+        [SerializeField] private float _cameraSmoothing;
+        [SerializeField] private FloatVariableAsset _cameraDistance;
+
+        private Vector3 _cameraVelocity;
+
         public void OnMove(InputValue value)
         {
             var dir = value.Get<Vector2>();
@@ -27,6 +34,22 @@ namespace SaitoGames.SurvivorGame.Character
         public void OnDodge() 
         {
             _targetObject.ActionCommand(CharacterAction.Dodge);
+        }
+
+        private void OnValidate()
+        {
+            _cameraDistance.Value = _cameraOffset.magnitude;
+        }
+
+        private void FixedUpdate()
+        {
+            var cam = Camera.main.transform;
+            var target = ControlTargetObject.transform.position;
+            var startPos = cam.position;
+            var targetPos =  target + _cameraOffset;
+
+            cam.position = Vector3.SmoothDamp(startPos, targetPos, ref _cameraVelocity, _cameraSmoothing);
+            _healthBar.transform.position = target;
         }
     }
 }
