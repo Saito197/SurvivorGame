@@ -1,0 +1,3 @@
+[submodule "SurvivorGame/Assets/Scripts/Utilities"]
+	path = SurvivorGame/Assets/Scripts/Utilities
+	url = https://github.com/Saito197/Utilities.git
